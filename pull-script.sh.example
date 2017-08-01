@@ -1,0 +1,18 @@
+cd /var/www/html/
+/usr/bin/git stash drop
+/usr/bin/git stash
+/usr/bin/git fetch
+/usr/bin/git checkout master
+/usr/bin/git pull -f [git repository]
+/bin/chown -R apache.ec2-user /var/www/html/
+#/bin/chown -R apache.apache /var/www/html/userfiles
+#/bin/chown -R apache.ec2-user /var/www/html/uploads/files
+#/bin/chown -R apache.ec2-user /var/www/html/uploads/thumbnails
+#/bin/chown -R apache.apache /var/www/html/uploads/cache_folder
+#/bin/chown -R apache.apache /var/www/html/uploads/temp
+#/bin/chown -R apache.ec2-user /var/www/html/uploads
+/bin/rm -rf /var/www/html/uploads/cache_folder/*
+/bin/rm -rf /var/www/html/uploads/temp/*
+/bin/chmod -R u=rwX,g=rwX,o=rX  /var/www/html/
+echo "---------------------------- [banner] --------------------------"
+echo ""
